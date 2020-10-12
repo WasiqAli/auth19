@@ -14,26 +14,15 @@ const brandemployeeSchema = new Schema(
         employee:{
 
 
-            employeePicture:{
-                type: String,
-                required: true,
-                
-               },
-
-            employeeFirstName:{
+        
+            employeeName:{
             type: String,
             required:true,
             min:4,
             max:255
 
                 },
-            employeeLastName:{
-                type: String,
-                required:true,
-                min:4,
-                max:255   
-    
-                },
+         
                 
             employeeEmail:{
                 type: String,
@@ -41,23 +30,27 @@ const brandemployeeSchema = new Schema(
                 min:6,
                 max:255
                  },
+                employeePassword:{
+                type: String,
+                    
+                min:6,
+                max:255
+                },                
+                 
             employeePhoneNumber:{
                 type : String,
                 required:true,
                 max:30
             },
-
-            employeeCompanyName:{
-                type: String,
-                required:true,
-                min:5,
-                max:255
-                
-             },
-
-        roleid:{  type: mongoose.Schema.Types.ObjectId,
-            ref: 'Role' }, 
-
+            employeeRole:{
+                type : String,
+                max:30
             }
+
+    
+        // roleid:{  type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'Role' }, 
+
+        }
  });
  module.exports= mongoose.model('BrandEmployee',brandemployeeSchema);

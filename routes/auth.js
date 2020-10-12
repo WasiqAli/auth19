@@ -31,6 +31,11 @@ router.post('/:id/brandemployee',BrandEmployeeController.registerEmployee);
 //delete brandemployee
 router.delete('/:id/employeeDelete',BrandEmployeeController.employeeDelete);
 
+router.get('/:id/employeeGet',BrandEmployeeController.employeeGet);
+
+router.put('/:id/employeeEdit',BrandEmployeeController.employeeEdit)
+
+
 
 
 
