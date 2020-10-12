@@ -14,8 +14,8 @@ exports.register = async(req,res)=>
     const schema = Joi.object({ 
         firstName: Joi.string().min(4).max(20).required(),
         lastName: Joi.string().min(4).max(20).required(),
-        country: Joi.string().min(4).required(),
-        city: Joi.string().min(3),
+        contactNo: Joi.string().min(4).max(50).required(),
+        country: Joi.string().min(4).required(),        
         companyName: Joi.string().min(4).required(),
         websiteUrl: Joi.string().min(4).required(),
         email: Joi.string().min(8).required(),
@@ -41,8 +41,8 @@ exports.register = async(req,res)=>
    const user = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    contactNo:req.body.contactNo,
     country: req.body.country,
-    city: req.body.city,
     companyName: req.body.companyName,
     websiteUrl: req.body.websiteUrl,
     email: req.body.email,    
@@ -120,4 +120,13 @@ exports.edit =  function (req,res){
 
     }
    
+    }
+
+
+    exports.userGet=async(req,res)=>{
+        User.findOne({_id: req.params.id},function(error, user){
+            console.log("This user will get selected "+ user);
+
+            res.send("This user is selected"+ user);
+        });
     }
