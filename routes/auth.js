@@ -29,17 +29,20 @@ router.get('/userGet/:id',AuthController.userGet);
 router.get('/userlist',AuthController.allusersGet);
 
 
+//Brand Employee Routes
+
 // create brandemployee
 router.post('/:id/brandemployee',BrandEmployeeController.registerEmployee);
 
 //delete brandemployee
 router.delete('/:id/employeeDelete',BrandEmployeeController.employeeDelete);
 
-//get brandemployee
+//get single brandemployee
 router.get('/:id/employeeGet',BrandEmployeeController.employeeGet);
 //edit brandemployee
 router.put('/:id/employeeEdit',BrandEmployeeController.employeeEdit)
-
+//get all brandemployee//
+router.get('/employeelist',BrandEmployeeController.allemployeeGet);
 
 
 

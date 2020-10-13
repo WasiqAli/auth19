@@ -3,99 +3,58 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-
+ 
 const companyproductSchema = new Schema(
     {
-        productName:{
-            type: String,
-            required:true,
-            min:4,
-            max:255
 
-
-            },
-        productURL:{
-                type: String,
-                required:true,
-                min:4,
-                max:255   
-    
+        Companyid:{  type: mongoose.Schema.Types.ObjectId,
+            ref: 'User' 
                 },
-        productDescription:{
-                    type: String,
-                    required:true,
-                    min:4,
-                    max:255
-        
-        
-                    },
-        productDetails:{
-                  type: String,
-                  required:true,
-                  min:5,
-                  max:255
-            
-            
-                    },
-        region:{
-                type: String,
-                required:true,
-                min:5,
-                max:255
-                
-                
-                        },
-        brand:{
-                type: String,
-                required:true,
-                min:5,
-                max:255
-                    
-                    
-                         },
         category:{
-                type: String,
-                required: true,
-                min:6,
-                max:255
-            },
 
-        socialmediaProfiles:{
             type: String,
             required: true,
             min:6,
+            max:255,
+            subCategory:{type: String}
+},
+ 
+        brand:{
+            type: String,
+            required:true,
+            min:5,
             max:255
-        },
-        productImages: {
-             type: String,
-             required: true,
-             
-            },
+                },
        
-        date:{
-            type: Date,
-            default: Date.now
-             
-        }
-
+        region:{
+            type: String,
+            required:true,
+            min:5,
+            max:255
+            
+    },
+        productName:{
+        type: String,
+        required:true,
+        min:4,
+        max:255
+},
+ 
+        productURL:{
+            type: String,
+            required:true,
+            min:4,
+            max:255   
+ 
+            },
+        productDescription:{
+                type: String,
+                required:true,
+                min:4,
+                max:500
+    
+            }
+            
     });
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    module.exports= mongoose.model('Companyproducts',companyproductSchema);
-   
-
-   
+ 
+module.exports= mongoose.model('Companyproducts',companyproductSchema);

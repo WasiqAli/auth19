@@ -66,4 +66,12 @@ exports.registerEmployee = async(req,res)=>{
             
      
     }
+
+//get all employees//
+
+    exports.allemployeeGet=async(req , res)=> {
+        BrandEmployee.find({}).then(function (brandemployee) {
+        res.send(brandemployee);
+        });
+       }
        
