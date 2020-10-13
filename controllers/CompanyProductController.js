@@ -52,6 +52,14 @@ exports.addproduct = async(req,res)=>{
         res.send(companyproduct);
         });
        }
+
+    //get all product for specific Company//
+ 
+    exports.allproductCompanyGet=async(req , res)=> {
+        CompanyProduct.find({Companyid : req.params.id}).then(function (companyproduct) {
+        res.send(companyproduct);
+        });
+       }
  
     //Update Product
  
