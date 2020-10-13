@@ -22,6 +22,12 @@ const userSchema = new Schema(
                 max:20  
     
                 },
+        contactNo:{
+                type: String,                
+                min:4,
+                max:25  
+
+            },
         country:{
                     type: String,
                     
@@ -30,20 +36,19 @@ const userSchema = new Schema(
         
         
                     },
-        city:{
-                  type: String,
+        // city:{
+        //           type: String,
                   
-                  min:5,
-                  max:20
+        //           min:5,
+        //           max:20
             
             
-                    },
+        //             },
         companyName:{
                 type: String,
                 
                 min:5,
-                max:25
-                
+                max:25                
                 
                         },
         corporateHierarchy:{
@@ -59,7 +64,7 @@ const userSchema = new Schema(
                     
                     
         },
-        addressUrl:{
+        address:{
                     type: String,
                     
                     min:5,
@@ -79,6 +84,11 @@ const userSchema = new Schema(
             
             min:6,
             max:255
+        },
+        signature:{
+            type: String,            
+            min:6,
+            max:100
         },
         econcent: {
              type: Boolean,
