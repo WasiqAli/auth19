@@ -1,11 +1,13 @@
 const router = require('express').Router();
 const User = require('../model/User');
 const BrandEmployee = require('../model/BrandEmployee');
-// const Branduser = require('../model/Branduser');
+const CompanyProduct = require("../model/Companyproducts")
+
 
 const { Router } = require('express');
 const AuthController = require("../controllers/AuthController");
 const BrandEmployeeController=require("../controllers/BrandEmployeeController");
+const CompanyProductsController=require("../controllers/CompanyProductController")
 //const registerValidation = require('../validation');
 
     
@@ -44,8 +46,8 @@ router.put('/:id/employeeEdit',BrandEmployeeController.employeeEdit)
 //get all brandemployee//
 router.get('/employeelist',BrandEmployeeController.allemployeeGet);
 
-
-
+//add company products//
+router.post('/:id/addproducts',CompanyProductsController.addproduct);
 
 
 
