@@ -15,6 +15,10 @@ exports.register = async(req,res)=>
         firstName: Joi.string().min(4).max(20).required(),
         lastName: Joi.string().min(4).max(20).required(),
         contactNo: Joi.string().min(4).max(50).required(),
+        signature: Joi.string().min(4).max(50).required(),
+        econcent: Joi.boolean(),
+        corporateHierarchy: Joi.string().min(4).max(50).required(),
+        address: Joi.string().min(4).max(100).required(),
         country: Joi.string().min(4).required(),        
         companyName: Joi.string().min(4).required(),
         websiteUrl: Joi.string().min(4).required(),
@@ -41,6 +45,10 @@ exports.register = async(req,res)=>
    const user = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    signature:req.body.signature,
+    econcent:req.body.econcent,
+    corporateHierarchy:req.body.corporateHierarchy,
+    address:req.body.address,
     contactNo:req.body.contactNo,
     country: req.body.country,
     companyName: req.body.companyName,
@@ -130,3 +138,11 @@ exports.edit =  function (req,res){
             res.send("This user is selected"+ user);
         });
     }
+
+    exports.allusersGet=async(req , res)=> {
+        User.find({}).then(function (users) {
+        res.send(users);
+        });
+       }
+
+    

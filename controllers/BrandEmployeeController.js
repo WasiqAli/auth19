@@ -4,13 +4,12 @@ const BrandEmployee = require('../model/BrandEmployee');
 exports.registerEmployee = async(req,res)=>{
     const brandemployee = new BrandEmployee({
         Companyid: {_id:req.params.id},
-            employee:{
-                employeePicture:req.body.employee.employeePicture,
-                employeeFirstName:req.body.employee.employeeFirstName,
-                employeeLastName: req.body.employee.employeeLastName,
+            employee:{                                
+                employeeName:req.body.employee.employeeName,
                 employeeEmail: req.body.employee.employeeEmail,
                 employeePhoneNumber: req.body.employee.employeePhoneNumber,
-                employeeCompanyName: req.body.employee.employeeCompanyName
+                role: req.body.employee.role,
+                employeePassword:req.body.employee.employeePassword
             }
     });
         try {

@@ -25,7 +25,8 @@ router.put('/edit/:id',AuthController.edit);
 
 //get one userinfo//
 router.get('/userGet/:id',AuthController.userGet);
-
+//get all users data//
+router.get('/userlist',AuthController.allusersGet);
 
 
 // create brandemployee
@@ -38,6 +39,7 @@ router.delete('/:id/employeeDelete',BrandEmployeeController.employeeDelete);
 router.get('/:id/employeeGet',BrandEmployeeController.employeeGet);
 //edit brandemployee
 router.put('/:id/employeeEdit',BrandEmployeeController.employeeEdit)
+
 
 
 
