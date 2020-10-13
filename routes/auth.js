@@ -45,7 +45,8 @@ router.get('/:id/employeeGet',BrandEmployeeController.employeeGet);
 router.put('/:id/employeeEdit',BrandEmployeeController.employeeEdit)
 //get all brandemployee//
 router.get('/employeelist',BrandEmployeeController.allemployeeGet);
-
+//get all brandemployee for specific company//
+router.get('/:id/employeelist',BrandEmployeeController.allemployeeCompanyGet);
 
 
 //CompanyProductRoutes
@@ -57,6 +58,8 @@ router.delete('/:id/productdelete',CompanyProductsController.productdelete);
 router.get('/:id/productget',CompanyProductsController.productget);
 //all product selected
 router.get('/:id/allproductGet',CompanyProductsController.allproductGet);
+//all product for specific company selected
+router.get('/:id/allproductCompanyGet',CompanyProductsController.allproductCompanyGet);
 //update product
 router.put('/:id/updateproduct',CompanyProductsController.updateproduct);
 
