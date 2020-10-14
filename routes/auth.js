@@ -1,13 +1,15 @@
 const router = require('express').Router();
 const User = require('../model/User');
 const BrandEmployee = require('../model/BrandEmployee');
-const CompanyProduct = require("../model/Companyproducts")
-
+const CompanyProduct = require("../model/Companyproducts");
+const Influencer = require("../model/Influencer");
 
 const { Router } = require('express');
 const AuthController = require("../controllers/AuthController");
 const BrandEmployeeController=require("../controllers/BrandEmployeeController");
-const CompanyProductsController=require("../controllers/CompanyProductController")
+const CompanyProductsController=require("../controllers/CompanyProductController");
+const InfluencerController=require("../controllers/InfluencerController");
+
 //const registerValidation = require('../validation');
 
     
@@ -61,9 +63,23 @@ router.get('/:id/allproductGet',CompanyProductsController.allproductGet);
 router.put('/:id/updateproduct',CompanyProductsController.updateproduct);
 
 
+//------------------------------------------------------------------
+//Influencer
+//influencer login 
+router.post('/influencerLogin',InfluencerController.influencerLogin);
+//register new influencer
+router.post('/influencerRegister',InfluencerController.influencerRegister);
 
+//delete influencer from db
+router.delete('/influencerDelete/:id',InfluencerController.influencerDelete);
 
+// //update influencer info//
 
+router.put('/influencerEdit/:id',InfluencerController.influencerEdit);
 
+// //get one influencerinfo//
+router.get('/:id/influencerGet',InfluencerController.influencerGet);
+// //get all influencer data//
+router.get('/influencerallGet',InfluencerController.influencerallGet);
 
 module.exports = router;
