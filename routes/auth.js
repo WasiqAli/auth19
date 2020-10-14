@@ -43,9 +43,14 @@ router.post('/:id/brandemployee',BrandEmployeeController.registerEmployee);
 //delete brandemployee
 router.delete('/:id/employeeDelete',BrandEmployeeController.employeeDelete);
 
+
 //get single brandemployee
+
+router.get('/:id/employeeGet',BrandEmployeeController.employeeGet);
+
 router.get('/:id/employeeGet',BrandEmployeeController.employeeGet);
 //edit brandemployee
+
 router.put('/:id/employeeEdit',BrandEmployeeController.employeeEdit)
 //get all brandemployee that are in db//
 router.get('/employeelist',BrandEmployeeController.allemployeeGet);
