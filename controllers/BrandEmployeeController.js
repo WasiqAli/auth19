@@ -75,3 +75,10 @@ exports.registerEmployee = async(req,res)=>{
         });
        }
        
+//get all employees for specific id//
+
+    exports.allemployeeCompanyGet=async(req , res)=> {
+        BrandEmployee.find({Companyid : req.params.id}).then(function (brandemployee) {
+        res.send(brandemployee);
+        });
+       }

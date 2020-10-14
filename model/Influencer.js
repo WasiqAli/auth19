@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-
 var Schema = mongoose.Schema;
-
 
 
 
@@ -43,7 +41,6 @@ const influencerSchema = new Schema(
                 min:6,
                 max:100
             },
-
         password:{
             type: String,
             
@@ -74,13 +71,11 @@ const influencerSchema = new Schema(
 
 
 
-
 // Custom validation for email
 influencerSchema.path('email').validate((val) => {
     emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return emailRegex.test(val);
 }, 'Invalid e-mail.');
-
 
 
 

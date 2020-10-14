@@ -11,24 +11,24 @@ exports.register = async(req,res)=>
 
     //Validate USER DATA Before SUBMIT
    
-    const schema = Joi.object({ 
-        firstName: Joi.string().min(4).max(20).required(),
-        lastName: Joi.string().min(4).max(20).required(),
-        contactNo: Joi.string().min(4).max(50).required(),
-        signature: Joi.string().min(4).max(50).required(),
-        econcent: Joi.boolean(),
-        corporateHierarchy: Joi.string().min(4).max(50).required(),
-        address: Joi.string().min(4).max(100).required(),
-        country: Joi.string().min(4).required(),        
-        companyName: Joi.string().min(4).required(),
-        websiteUrl: Joi.string().min(4).required(),
-        email: Joi.string().min(8).required(),
-        password: Joi.string().min(8).required()
-    });
+    // const schema = Joi.object({ 
+    //     firstName: Joi.string().min(4).max(20).required(),
+    //     lastName: Joi.string().min(4).max(20).required(),
+    //     contactNo: Joi.string().min(4).max(50).required(),
+    //     signature: Joi.string().min(4).max(50).required(),
+    //     econcent: Joi.boolean(),
+    //     corporateHierarchy: Joi.string().min(4).max(50).required(),
+    //     address: Joi.string().min(4).max(100).required(),
+    //     country: Joi.string().min(4).required(),        
+    //     companyName: Joi.string().min(4).required(),
+    //     websiteUrl: Joi.string().min(4).required(),
+    //     email: Joi.string().min(8).required(),
+    //     password: Joi.string().min(8).required()
+    // });
     
-    const {error} = schema.validate(req.body);
+    // const {error} = schema.validate(req.body);
     
-    if (error) return res.status(400).send(error.details[0].message);
+    // if (error) return res.status(400).send(error.details[0].message);
 
     //Check if email already on Database
 

@@ -12,14 +12,14 @@ const InfluencerController=require("../controllers/InfluencerController");
 
 //const registerValidation = require('../validation');
 
-    
+//***********************************Company routes start**********************/    
 //register new user
 router.post('/register',AuthController.register);
 
 //login
 router.post('/login',AuthController.login);
 
-//delete user from db
+//delete user from db//
 router.delete('/delete/:id',AuthController.delete);
 
 
@@ -32,10 +32,12 @@ router.get('/userGet/:id',AuthController.userGet);
 //get all users data//
 router.get('/userlist',AuthController.allusersGet);
 
+//**************************************Company user ends here**************************************//
 
-//Brand Employee Routes
 
-// create brandemployee
+//***************************************Brand Employee Routes**************************************//
+
+// create brandemployee//
 router.post('/:id/brandemployee',BrandEmployeeController.registerEmployee);
 
 //delete brandemployee
@@ -45,21 +47,26 @@ router.delete('/:id/employeeDelete',BrandEmployeeController.employeeDelete);
 router.get('/:id/employeeGet',BrandEmployeeController.employeeGet);
 //edit brandemployee
 router.put('/:id/employeeEdit',BrandEmployeeController.employeeEdit)
-//get all brandemployee//
+//get all brandemployee that are in db//
 router.get('/employeelist',BrandEmployeeController.allemployeeGet);
+//get all brandemployee for specific company//
+router.get('/:id/employeelist',BrandEmployeeController.allemployeeCompanyGet);
+
+//**********************************End of brand employees****************************/
 
 
-
-//CompanyProductRoutes
+//*********************************CompanyProductRoutes*******************************/
 //add company products//
 router.post('/:id/addproduct',CompanyProductsController.addproduct);
 //delete product
 router.delete('/:id/productdelete',CompanyProductsController.productdelete);
 //single product selected
 router.get('/:id/productget',CompanyProductsController.productget);
-//all product selected
+//get all product selected in databse//
 router.get('/:id/allproductGet',CompanyProductsController.allproductGet);
-//update product
+//get all product for specific company selected//
+router.get('/:id/allproductCompanyGet',CompanyProductsController.allproductCompanyGet);
+//update product//
 router.put('/:id/updateproduct',CompanyProductsController.updateproduct);
 
 
