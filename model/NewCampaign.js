@@ -16,7 +16,7 @@ const newCampaignSchema = new Schema(
         }
     },
 //Step-2
-    productDetails:{
+    prodDetails:{
         category:{
             type:String
         },
@@ -38,6 +38,7 @@ const newCampaignSchema = new Schema(
     },
 //Step-3
     projectDetails:{},
+
    });
 
 module.exports=mongoose.model('NewCampaign',newCampaignSchema);
